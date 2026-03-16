@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Record System</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav class="topnav">
+<div class="brand">Employee <span>Records</span></div>
+<div class="nav-right" id="nav-date"></div>
+</nav>
+
+
+<div class="layout">
+
+<aside class="sidebar">
+
+<div class="sidebar-search">
+<input type="text" id="search" placeholder="Search employees..." oninput="filterList()">
+<button onclick="searchEmployee()">Search</button>
+</div>
+
+<div class="sidebar-label">All Employees</div>
+
+<div class="emp-list" id="emp-list"></div>
+
+<div class="sidebar-footer">
+<button class="btn-add" onclick="newForm()">+ Add New Employee</button>
+</div>
+
+</aside>
+
+
+<main class="main">
+
+<div class="stats-bar">
+
+<div class="stat-card">
+<div class="lbl">Total Employees</div>
+<div class="val val-blue" id="s-total">0</div>
+</div>
+
+<div class="stat-card">
+<div class="lbl">Active</div>
+<div class="val val-green" id="s-active">0</div>
+</div>
+
+<div class="stat-card">
+<div class="lbl">Inactive</div>
+<div class="val val-gray" id="s-inactive">0</div>
+</div>
+
+<div class="stat-card">
+<div class="lbl">Departments</div>
+<div class="val val-blue" id="s-depts">0</div>
+</div>
+
+</div>
+
+
+<div class="content-area">
+
+<div class="table-panel">
+
+<div class="panel-header">
+<h2>Employee Directory</h2>
+
+<div class="panel-actions">
+<button class="btn-sm btn-export" onclick="exportXML()">Export XML</button>
+<button class="btn-sm" onclick="printTable()">Print</button>
+</div>
+
+</div>
+
+<div style="overflow-x:auto">
+
+<table>
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Department</th>
+<th>Job Title</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="emp-table"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<div class="form-panel">
+
+<h2>Add Employee</h2>
+
+<input id="fname" placeholder="First Name">
+<input id="lname" placeholder="Last Name">
+<input id="dept" placeholder="Department">
+<input id="title" placeholder="Job Title">
+<input id="email" placeholder="Email">
+<input id="phone" placeholder="Phone">
+
+<button onclick="addEmployee()">Add Employee</button>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
